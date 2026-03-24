@@ -205,3 +205,39 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Apptainer / Singularity images
+*.sif
+
+# Writable containers (sandbox directories)
+*.sandbox/
+*/sandbox/
+*_sandbox/
+
+# Temporary build files
+apptainer-*
+singularity-*
+
+# Cache / temp directories (sometimes created during builds)
+.tmp/
+.cache/
+
+# Logs
+*.log
+
+# Python (since you're using igraph + ML)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter (if you use it)
+.ipynb_checkpoints/
+
+# Data outputs (VERY important for ML)
+data/
+outputs/
+*.npz
+*.csv
+*.parquet
