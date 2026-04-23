@@ -25,9 +25,10 @@ def build_manifest(input_dir: str, output_path: str):
     for path in sorted(input_dir.glob("graphs10_*.g6")):
         batch_id = parse_batch_id(path)
         graphs = nx.read_graph6(path)
+        total = len(graphs)
 
         for local_idx, g in enumerate(graphs):
-            print(f"processing batch {batch_id}")
+            print(f"{local_idx + 1}/{total} batch {batch_id}")
             records.append(
                 {
                     "sample_id": f"{batch_id:03d}_{local_idx:09d}",
