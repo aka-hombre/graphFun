@@ -236,7 +236,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Data outputs (VERY important for ML)
-data/
+
 outputs/
 *.npz
 *.csv
