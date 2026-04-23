@@ -22,5 +22,5 @@ nx.draw(graphs[-1])
 plt.show()
 """
 
-df = pd.read_parquet("graphs_manifest.parquet")
+df = pd.read_parquet("data/metadata/graphs_manifest.parquet")
 print(df.head())
