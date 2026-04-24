@@ -36,6 +36,7 @@ def build_manifest(input_dir: str, output_path: str):
                     "source_file": path.name,
                     "local_idx": local_idx,
                     "global_idx": global_idx,
+                    "graph6_rep": nx.to_graph6_bytes(g, header=False).decode("ascii"),  #   inefficient but we ball this is a quick fix
                     "num_nodes": 10,
                     "num_edges": g.number_of_edges(),
                     "planar": nx.is_planar(g),
