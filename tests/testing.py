@@ -1,5 +1,6 @@
 import networkx as nx
 from os import getcwd
+from pathlib import Path
 
 import pandas as pd 
 
@@ -20,7 +21,11 @@ print(len(graphs))
 plt.figure()
 nx.draw(graphs[-1])
 plt.show()
-"""
 
+"""
 df = pd.read_parquet("data/metadata/graphs_manifest.parquet")
 print(df.head())
+print('*'*10)
+print(df.tail(1))
+
+
