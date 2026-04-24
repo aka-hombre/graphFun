@@ -27,5 +27,4 @@ df = pd.read_parquet("data/metadata/graphs_manifest.parquet")
 print(df.head())
 print('*'*10)
 print(df.tail(1))
-
-
+print('*'*10)
