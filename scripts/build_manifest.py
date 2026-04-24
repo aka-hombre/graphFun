@@ -51,4 +51,4 @@ def build_manifest(input_dir: str, output_path: str):
 
 
 if __name__ == "__main__":
-    build_manifest("graph_data/V10/", "data/metadata/graphs_manifest.parquet")
+    build_manifest("data/graph_data/V10/", "data/metadata/graphs_manifest.parquet")
