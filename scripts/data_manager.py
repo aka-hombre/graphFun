@@ -42,7 +42,13 @@ class DataManager:
                    end_index: int
                    ) -> pd.DataFrame:
         """
-        
+        Pulls a slice of a row from a start index, to end index.
+        # impliment a logic to avoid out of bounds
+        Args:
+            start_idx:  non-negative integer indicating row to pull from
+            end_idx: non-negative integer indicating row to pull from
+        Returns:
+            Dataframe: a section of the parquet as a dataframe
         """
     
     def sample_random_row(self):
@@ -51,7 +57,9 @@ class DataManager:
         
         idx = self.rng.integers(0, len(self.manifest))
         return self.manifest.iloc[idx]
-
+    
+    def to_full_dataframe(self):
+        return pd.read_parquet(self.paruet_path)
 
 """
 class DataManager:
