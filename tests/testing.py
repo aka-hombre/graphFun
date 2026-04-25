@@ -1,6 +1,8 @@
 import networkx as nx
 from os import getcwd
 from pathlib import Path
+from scripts.data_manager import DataManager
+from scripts.graph_grappler import get_graphs, graphList_to_adj
 
 import pandas as pd 
 
@@ -23,8 +25,17 @@ nx.draw(graphs[-1])
 plt.show()
 
 """
+p_path = "data/metadata/graphs_manifest.parquet"
+d_path = "data/graph_data/V10/"
 df = pd.read_parquet("data/metadata/graphs_manifest.parquet")
-print(df.head())
-print('*'*10)
-print(df.tail(1))
-print('*'*10)
+
+shard1 = DataManager(p_path, d_path).pull_shard(000)
+
+#print(shard1.head())
+
+#shard1 = DataManager(p_path, d_path).pull_slice(0,3)
+
+#print(shard1.head())
+
+G, labels = get_graphs(shard1, return_adj=True, bool_as_int=True)
+print(labels)
