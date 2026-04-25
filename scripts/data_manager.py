@@ -50,6 +50,7 @@ class DataManager:
         Returns:
             Dataframe: a section of the parquet as a dataframe
         """
+        return pd.read_parquet(self.paruet_path)[start_idx:end_index]
     
     def sample_random_row(self):
         if self.rng is None:
