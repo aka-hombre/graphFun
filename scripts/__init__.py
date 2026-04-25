@@ -1,6 +1,6 @@
 
 
-__all__ = ["build_manifest", "data_manager"]
+__all__ = ["build_manifest", "data_manager", "graph_grappler"]
 
 from . import build_manifest
 
