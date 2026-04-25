@@ -2,7 +2,7 @@
 
 #SBATCH -N 1           # number of nodes
 #SBATCH -c 1           # number of cores
-#SBATCH -t 0-02:00:00  # time in d-hh:mm:ss
+#SBATCH -t 0-02:30:00  # time in d-hh:mm:ss
 #SBATCH -p public      # partition
 #SBATCH -q public      # QOS
 #SBATCH -o slurm.\%j.out # file to save job's STDOUT (%j = JobId)
