@@ -1,12 +1,12 @@
 import networkx as nx 
 import pandas as pd
-from typing import List, Tuple
+from typing import List, Tuple, Union
+from numpy.typing import NDArray
 import numpy as np
 
 def get_graphs(df: pd.DataFrame, 
-               return_adj: bool=False, 
-               bool_as_int: bool =False
-               )-> Tuple[List, List]:
+               return_adj: bool=False
+               )-> Tuple[Union[List[nx.Graph], NDArray], NDArray]:
     """
     Takes a DataFrame processed by data_manager, and extracts the graph6
     representations along with the planar label
@@ -14,20 +14,22 @@ def get_graphs(df: pd.DataFrame,
     Args:
         df: pandas DataFrame processed by data_manager
         return_adj: option to return as a networkx Graph object or numpy adjacency matrix
-        bool_as_int: option to return booleans as integers
     Returns:
-        Tuple[List, List]: List of Graphs (object specified by argument) and List of boolean planarity labels
+        Tuple[Union[List[nx.Graph], NDArray], NDArray]:
+            graphs:
+                List of networkx.Graph objects or NumPy array of adjacency matrices,
+                depending on `return_adj`
+            labels:
+                NumPy array of boolean planarity labels
     """
     graphs = df['graph6_rep'].to_list()
+    
+    labels = np.array(df['planar'].to_list(), dtype=int)
 
-    if not bool_as_int: labels = df['planar'].to_list()
+    G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
 
-    else: labels = list(map(int, df['planar'].to_list()))
-
-    G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]  
-
-    if not return_adj: return G, labels
-    else: return graphList_to_adj(G), labels
+    if return_adj: return np.array(graphList_to_adj(G)), labels
+    else: return G, labels
 
 def graphList_to_adj(G:List[nx.Graph]):
     """
