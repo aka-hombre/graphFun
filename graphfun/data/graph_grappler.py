@@ -29,11 +29,11 @@ def get_graphs(df: pd.DataFrame,
     #G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
     G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
 
-    if return_adj: return np.array(graphList_to_adj(G)), labels
+    if return_adj: return np.stack(graphList_to_adj(G)), labels
     else: return G, labels
 
 def graphList_to_adj(G:List[nx.Graph]):
     """
     Takes a networkx Graph and returns an adjacency matrix
     """
-    return [nx.to_numpy_array(g, dtype=np.ndarray) for g in G]
+    return [nx.to_numpy_array(g) for g in G]
