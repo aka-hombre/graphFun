@@ -27,7 +27,7 @@ def get_graphs(df: pd.DataFrame,
     #labels = np.array(df['planar'].to_list(), dtype=int)
     labels = np.array(df['planar'].to_list())
     #G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
-    G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
+    G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
 
     if return_adj: return np.array(graphList_to_adj(G)), labels
     else: return G, labels
