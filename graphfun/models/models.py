@@ -15,3 +15,37 @@ class myLinearModel(nn.Module):
 
     def forward(self, x):
         return self.model(x)
+
+
+
+# ------------------------
+# Model Registry (Factory)
+# ------------------------
+
+MODEL_REGISTRY = {
+    "linear": myLinearModel
+}
+
+def get_model(name: str, **kwargs) -> nn.Module:
+    """
+    Factory function to instantiate models.
+
+    Args:
+        name (str): model name
+        **kwargs: passed to model constructor
+
+    Returns:
+        nn.Module
+    """
+    if name not in MODEL_REGISTRY:
+        raise ValueError(f"Unknown model: {name}. Available: {list(MODEL_REGISTRY.keys())}")
+
+    return MODEL_REGISTRY[name](**kwargs)
+
+
+# ------------------------
+# Utility (optional)
+# ------------------------
+
+def list_models():
+    return list(MODEL_REGISTRY.keys())
