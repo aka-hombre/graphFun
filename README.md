@@ -9,6 +9,6 @@ Each file has 107189, and there are 111 files totaling 1320675669 non-isomorphic
 
 ___
 
-Running `python scripts/build_manifest.py` generates a `.parquet` file to train on in `data/metatdata` this is saved locally and ignored by `.gitignore`, because it exceeds the filesize limits on github. 
+Running `python graphfun/data/build_manifest.py` generates a `.parquet` file to train on in `data/metatdata` this is saved locally and ignored by `.gitignore`, because it exceeds the filesize limits on github. 
 
 It is reccomended to run the script on HPC, then transfer locally.
