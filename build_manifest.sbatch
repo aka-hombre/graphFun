@@ -19,4 +19,4 @@ module load mamba/latest
 source activate venv
 
 #Run the python script
-python3 scripts/build_manifest.py 
+python3 graphfun/data/build_manifest.py 
