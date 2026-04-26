@@ -1,8 +1,8 @@
 import networkx as nx
 from os import getcwd
 from pathlib import Path
-from scripts.data_manager import DataManager
-from scripts.graph_grappler import get_graphs
+from graphfun.data.data_manager import DataManager
+from graphfun.data.graph_grappler import get_graphs
 
 import pandas as pd 
 
