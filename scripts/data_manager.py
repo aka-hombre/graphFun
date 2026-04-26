@@ -1,8 +1,29 @@
 import numpy as np
-from pathlib import Path
-import re
-import networkx as nx
 import pandas as pd
+import torch
+from .graph_grappler import get_graphs
+from torch.utils.data import Dataset
+from numpy.typing import NDArray
+
+
+class GraphDataSet(Dataset):
+    """
+    Takes a Pandas DataFrame, processed by DataManager and creates a pytorch Dataset
+    """
+
+    def __init__(self,
+                 X: NDArray,
+                 y: NDArray):
+        assert len(X) == len(y)
+        self.X = torch.from_numpy(X).float()        # Adjaceny Matrices
+        self.y = torch.from_numpy(y).long()         # Lables
+    
+    def __len__(self):
+        return  len(self.X)
+    
+    def __getitem__(self, index):
+        return {'graph': self.X[index], 'planar_label': self.y[index]}
+
 
 
 class DataManager:
@@ -61,24 +82,3 @@ class DataManager:
     
     def to_full_dataframe(self):
         return pd.read_parquet(self.paruet_path)
-
-"""
-class DataManager:
-    def __init__(self, parquet_path, data_dir, seed=None):
-        from pathlib import Path
-        import numpy as np
-
-        self.parquet_path = Path(parquet_path)
-        self.data_dir = Path(data_dir)
-
-        self.seed = seed
-        self.rng = np.random.default_rng(seed) if seed is not None else None
-
-    def sample_random_row(self):
-        if self.rng is None:
-            raise RuntimeError("Random operations require a seed")
-        
-        idx = self.rng.integers(0, len(self.manifest))
-        return self.manifest.iloc[idx]
-
-"""
