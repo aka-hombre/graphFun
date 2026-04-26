@@ -22,7 +22,8 @@ class GraphDataSet(Dataset):
         return  len(self.X)
     
     def __getitem__(self, index):
-        return {'graph': self.X[index], 'planar_label': self.y[index]}
+        # X is graph and y is label
+        return self.X[index], self.y[index]
 
 
 
