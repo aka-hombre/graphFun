@@ -2,7 +2,7 @@ import networkx as nx
 from os import getcwd
 from pathlib import Path
 from scripts.data_manager import DataManager
-from scripts.graph_grappler import get_graphs, graphList_to_adj
+from scripts.graph_grappler import get_graphs
 
 import pandas as pd 
 
@@ -37,5 +37,5 @@ shard1 = DataManager(p_path, d_path).pull_shard(000)
 
 #print(shard1.head())
 
-G, labels = get_graphs(shard1, return_adj=True, bool_as_int=True)
-print(labels)
+G, labels = get_graphs(shard1, return_adj=True)
+print(type(G))
