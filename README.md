@@ -1,3 +1,6 @@
+# :crystal_ball: **graphFun**
+## *machine learning & graph playground*
+
 Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` using the tool
 `geng`
 
