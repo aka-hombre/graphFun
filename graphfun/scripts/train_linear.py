@@ -164,9 +164,9 @@ plt.ylabel("Average Loss")
 plt.legend()
 plt.grid(True, which='both', axis='y')   
 plt.grid(True, which='major', axis='x')
-plt.savefig('graphfun/tests/loss.png', dpi=300)
+plt.savefig('graphfun/outputs/linear_output/loss.png', dpi=300)
 
-df.to_csv('graphfun/tests/stats.csv')
+df.to_csv('graphfun/outputs/linear_output/stats.csv')
 
-with open('graphfun/tests/log.txt', 'w', encoding='utf-8') as f:
+with open('graphfun/outputs/linear_output/log.txt', 'w', encoding='utf-8') as f:
     f.write(log_str)
