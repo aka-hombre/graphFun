@@ -135,7 +135,7 @@ for epoch in range(cfg['numEpoch']):
             loss = myLoss(scores, y)
 
             # 2) estimate the overall loss over the all test set
-            running_loss_test += loss.detach().cpu().numpy
+            running_loss_test += loss.detach().cpu().numpy()
             accuracy_test += (scores.argmax(dim=1) == y).cpu().numpy()
     # End epoch
 
