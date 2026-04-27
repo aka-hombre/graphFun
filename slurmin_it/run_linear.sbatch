@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH -N 1           # number of nodes
-#SBATCH -c 4           # number of cores
+#SBATCH -c 8           # number of cores
 #SBATCH --mem=32G      # 32GB of memory
-#SBATCH -t 0-02:30:00  # time in d-hh:mm:ss
+#SBATCH -t 0-03:30:00  # time in d-hh:mm:ss
 #SBATCH -p public      # partition
 #SBATCH -q public      # QOS
 #SBATCH -G 1           # request 1 gpu    
