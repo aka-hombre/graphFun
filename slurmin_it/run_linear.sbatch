@@ -19,6 +19,7 @@ module load cuda
 
 #Activate environment
 source activate venv
+export PYTHONPATH=$PWD:$PYTHONPATH
 
 #Run the python script
 python3 graphfun/scripts/train_linear.py
