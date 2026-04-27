@@ -22,14 +22,14 @@ from graphfun.models import get_model
 cfg = dict()
 cfg['numEpoch'] = 100
 cfg['learning_rate'] = .0001
-cfg['batchSize'] = 128
+cfg['batchSize'] = 1024
 cfg['model'] = 'linear'
 
 #-----
 #   Device specific training
 #-----
 
-cfg['num_workers'] = 4
+cfg['num_workers'] = 6  # if -c 8 OR 12 id -c 16
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
@@ -66,6 +66,7 @@ test_loader = DataLoader(
     test_set,
     batch_size=cfg['batchSize'],
     shuffle=False,
+    num_workers=cfg['num_workers'],
     pin_memory= (device.type == "cuda") 
 )
 
