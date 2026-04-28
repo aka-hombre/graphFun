@@ -16,6 +16,20 @@ class myLinearModel(nn.Module):
     def forward(self, x):
         return self.model(x)
 
+class myMLP(nn.Module):
+    """
+    MLP with one hidden layer, and ReLu activation 
+    """
+    def __init__(self, in_dimension=100, intermediate=60, classes= 2):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(in_dimension, intermediate),
+            nn.ReLU(),
+            nn.Linear(intermediate, classes)
+        )
+    def forward(self, x):
+        return self.model(x)
 
 
 # ------------------------
