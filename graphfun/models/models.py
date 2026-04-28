@@ -37,7 +37,8 @@ class myMLP(nn.Module):
 # ------------------------
 
 MODEL_REGISTRY = {
-    "linear": myLinearModel
+    "linear": myLinearModel,
+    "MLP": myMLP
 }
 
 def get_model(name: str, **kwargs) -> nn.Module:
