@@ -1,4 +1,4 @@
-# :crystal_ball: **graphFun**
+# ![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20221103114655/PolyhedronGraph-660x472.png "Icon Title") **graphFun**
 ## *machine learning & graph playground*
 
 Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` using the tool
