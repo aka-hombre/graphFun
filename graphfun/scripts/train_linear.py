@@ -199,6 +199,16 @@ with torch.no_grad():
         all_preds.extend(preds.cpu().numpy())
         all_targets.extend(y.cpu().numpy())
 
+np.savez('graphfun/outputs/linear_output/preds_targets.npz',
+         preds=all_preds,
+         targets=all_targets)
+
+"""
+To load later:
+data = np.load('graphfun/outputs/linear_output/preds_targets.npz')
+all_preds = data['preds']
+all_targets = data['targets']
+"""
 
 label_gr = ['Not Planar','Planar']
 
