@@ -27,14 +27,17 @@ def get_graphs(df: pd.DataFrame,
     #labels = np.array(df['planar'].to_list(), dtype=int)
     labels = np.array(df['planar'].to_list())
     #G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
-    G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
+    
 
     if return_adj: 
         features = np.stack([
-            nx.to_numpy_array(g).flatten().astype(np.float32)   # flattens for input to linear as is, avoide bottlenecking when loading in the whole dataset
-            for g in G
+            nx.to_numpy_array(
+                nx.from_graph6_bytes(g.encode())
+            ).flatten().astype(np.float32)
+            for g in graphs                     # iterate strings, not Graph objects, flattens for input to linear as is, avoide bottlenecking when loading in the whole dataset
         ])
-        
         return features, labels
-    else: return G, labels
+    else: 
+        G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
+        return G, labels
 
