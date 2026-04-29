@@ -237,7 +237,7 @@ __pycache__/
 
 # Data outputs (VERY important for ML)
 
-outputs/
+
 *.npz
 *.csv
 *.parquet
