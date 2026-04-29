@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -N 1           # number of nodes
 #SBATCH -c 8           # number of cores
-#SBATCH --mem=64G      # 64BG of memory (still enough for public)
+#SBATCH --mem=256G     # 256BG of memory (still enough for public)
 #SBATCH -t 0-05:30:00  # time in d-hh:mm:ss
 #SBATCH -p public      # partition
 #SBATCH -q public      # QOS
