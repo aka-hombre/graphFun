@@ -17,7 +17,7 @@ def get_graphs(df: pd.DataFrame,
     Returns:
         Tuple[Union[List[nx.Graph], NDArray], NDArray]:
             graphs:
-                List of networkx.Graph objects or NumPy array of adjacency matrices,
+                List of networkx.Graph objects or NumPy array of adjacency matrices, as (1x100) vec,
                 depending on `return_adj`
             labels:
                 NumPy array of boolean planarity labels
