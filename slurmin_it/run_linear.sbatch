@@ -9,7 +9,7 @@
 #SBATCH -o slurm.%j.out
 #SBATCH -e slurm.%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=u@asu.edu
+#SBATCH --mail-user="\%u@asu.edu"
 #SBATCH --export=NONE
 
 export PYTHONPATH=$PWD:$PYTHONPATH
