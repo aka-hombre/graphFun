@@ -15,3 +15,8 @@ ___
 Running `python graphfun/data/build_manifest.py` generates a `.parquet` file to train on in `data/metatdata` this is saved locally and ignored by `.gitignore`, because it exceeds the filesize limits on github. 
 
 It is reccomended to run the script on HPC, then transfer locally.
+
+___
+To run
+1. `apptainer build mySif.sif containers/apptainer.def`
+2. `apptainer exec mySif.sif python3 graphfun/scripts/train_linear.py`
