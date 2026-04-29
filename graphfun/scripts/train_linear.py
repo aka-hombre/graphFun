@@ -29,7 +29,7 @@ cfg['model'] = 'linear'
 #   Device specific training
 #-----
 
-cfg['num_workers'] = 6  # if -c 8 OR 12 id -c 16
+cfg['num_workers'] = 2  # if -c 8 OR 12 id -c 16
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
