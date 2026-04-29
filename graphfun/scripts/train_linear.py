@@ -14,7 +14,7 @@ from graphfun.data.data_manager import DataManager, GraphDataSet
 from graphfun.data.graph_grappler import get_graphs
 from graphfun.models import get_model
 
-
+print(6*'*'+'starting program'+'*'*6)
 
 #-----
 #   Hyperparameters
