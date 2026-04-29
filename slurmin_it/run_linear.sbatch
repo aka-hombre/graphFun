@@ -14,4 +14,4 @@
 
 export PYTHONPATH=$PWD:$PYTHONPATH
 
-apptainer exec --nv /path/to/your_container.sif python3 graphfun/scripts/train_linear.py
+apptainer exec --nv /home/iarodr13/projects/graphFun/mySif.sif python3 graphfun/scripts/train_linear.py
