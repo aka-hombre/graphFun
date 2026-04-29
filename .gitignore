@@ -239,7 +239,6 @@ __pycache__/
 
 
 *.npz
-*.csv
 *.parquet
 
 
