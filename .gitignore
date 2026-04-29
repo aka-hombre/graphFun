@@ -241,3 +241,7 @@ outputs/
 *.npz
 *.csv
 *.parquet
+
+
+# My stuff 
+.NOTES.MD
