@@ -245,3 +245,7 @@ outputs/
 
 # My stuff 
 .NOTES.MD
+
+# removed from unit testing
+graphfun/tests/*.png
+graphfun/tests/*.txt
