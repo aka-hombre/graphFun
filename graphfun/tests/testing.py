@@ -20,6 +20,10 @@ cfg['batchSize'] = 32
 p_path = "data/metadata/graphs_manifest.parquet"
 d_path = "data/graph_data/V10/"
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
+
+
 
 shard1 = DataManager(p_path, d_path).pull_shard(000)
 print(shard1.head())
@@ -142,7 +146,23 @@ df.to_csv('graphfun/tests/stats.csv')
 with open('graphfun/tests/log.txt', 'w', encoding='utf-8') as f:
     f.write(log_str)
 
-"""
+
+# ---- Confusion Matrix ----
+all_preds = []
+all_targets = []
+
+myModel.eval()
+with torch.no_grad():
+    for X, y in test_loader:
+        X = X.to(device, non_blocking=True).float()
+        y = y.to(device, non_blocking=True)
+        
+        scores = myModel(X)
+        preds = scores.argmax(dim=1)
+        
+        all_preds.extend(preds.cpu().numpy())
+        all_targets.extend(y.cpu().numpy())
+
 
 label_gr = ['Not Planar','Planar']
 
@@ -157,5 +177,3 @@ plt.tight_layout()
 plt.title("Confusion Matrix")
 
 fig.savefig('graphfun/tests/cm.png')
-
-"""
