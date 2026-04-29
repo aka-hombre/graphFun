@@ -155,6 +155,9 @@ for epoch in range(cfg['numEpoch']):
     
     # end epoch
 
+#-----
+#   Plotting train and loss
+#-----
 
 plt.figure(figsize=(8, 6))
 plt.semilogy(range(cfg['numEpoch']), df['loss_train'], label=r'$\ell_{train}$')
@@ -167,7 +170,47 @@ plt.grid(True, which='both', axis='y')
 plt.grid(True, which='major', axis='x')
 plt.savefig('graphfun/outputs/linear_output/loss.png', dpi=300)
 
+#-----
+#   Writing data to .csv and making log
+#-----
+
 df.to_csv('graphfun/outputs/linear_output/stats.csv')
 
 with open('graphfun/outputs/linear_output/log.txt', 'w', encoding='utf-8') as f:
     f.write(log_str)
+
+
+#-----
+#   Confusion Matrix
+#-----
+
+all_preds = []
+all_targets = []
+
+myModel.eval()
+with torch.no_grad():
+    for X, y in test_loader:
+        X = X.to(device, non_blocking=True).float()
+        y = y.to(device, non_blocking=True)
+        
+        scores = myModel(X)
+        preds = scores.argmax(dim=1)
+        
+        all_preds.extend(preds.cpu().numpy())
+        all_targets.extend(y.cpu().numpy())
+
+
+label_gr = ['Not Planar','Planar']
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+cm = confusion_matrix(all_targets,all_preds, normalize='true')
+
+disp = ConfusionMatrixDisplay(cm, display_labels=label_gr)
+disp.plot(ax= ax, cmap='Blues', values_format='.2f')
+fig.subplots_adjust(bottom=0.8) 
+plt.tight_layout()
+plt.title("Confusion Matrix")
+
+fig.savefig('graphfun/outputs/linear_output/cm.png')
+
