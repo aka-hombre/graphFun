@@ -137,7 +137,7 @@ for epoch in range(cfg['numEpoch']):
 
             # 2) estimate the overall loss over the all test set
             running_loss_test += loss.detach().cpu().numpy()
-            accuracy_test += (scores.argmax(dim=1) == y).cpu().numpy()
+            accuracy_test += (scores.argmax(dim=1) == y).sum().cpu().numpy()    # accumulating a count into a scalar, previously forgot .sum()
     # End epoch
 
     #-----
