@@ -1,4 +1,7 @@
-# <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221103114655/PolyhedronGraph-660x472.png" alt="alt text" width="70" style="margin: -20px;"> graphFun
+<h1>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221103114655/PolyhedronGraph-660x472.png" alt="alt text" width="70" style="vertical-align: middle; margin: 0;">
+  graphFun
+</h1>
 *machine learning & graph playground*
 ___
 
