@@ -1,300 +1,303 @@
-
--- epoch 0    loss     (train, test): 0.1676,  0.1244
+******starting program******
+Using device: cuda
+Number of paramerters of MLP model: 5152
+-- epoch 0
+    loss     (train, test): 0.1676,  0.1244
     accuracy (train, test): 0.9310,  0.9491
-
--- epoch 1    loss     (train, test): 0.1182,  0.1150
+-- epoch 1
+    loss     (train, test): 0.1182,  0.1150
     accuracy (train, test): 0.9512,  0.9522
-
--- epoch 2    loss     (train, test): 0.1127,  0.1111
+-- epoch 2
+    loss     (train, test): 0.1127,  0.1111
     accuracy (train, test): 0.9530,  0.9536
-
--- epoch 3    loss     (train, test): 0.1095,  0.1085
+-- epoch 3
+    loss     (train, test): 0.1095,  0.1085
     accuracy (train, test): 0.9543,  0.9548
-
--- epoch 4    loss     (train, test): 0.1070,  0.1063
+-- epoch 4
+    loss     (train, test): 0.1070,  0.1063
     accuracy (train, test): 0.9554,  0.9558
-
--- epoch 5    loss     (train, test): 0.1050,  0.1043
+-- epoch 5
+    loss     (train, test): 0.1050,  0.1043
     accuracy (train, test): 0.9563,  0.9568
-
--- epoch 6    loss     (train, test): 0.1033,  0.1035
+-- epoch 6
+    loss     (train, test): 0.1033,  0.1035
     accuracy (train, test): 0.9572,  0.9573
-
--- epoch 7    loss     (train, test): 0.1019,  0.1016
+-- epoch 7
+    loss     (train, test): 0.1019,  0.1016
     accuracy (train, test): 0.9579,  0.9583
-
--- epoch 8    loss     (train, test): 0.1007,  0.1007
+-- epoch 8
+    loss     (train, test): 0.1007,  0.1007
     accuracy (train, test): 0.9585,  0.9587
-
--- epoch 9    loss     (train, test): 0.0998,  0.0997
+-- epoch 9
+    loss     (train, test): 0.0998,  0.0997
     accuracy (train, test): 0.9589,  0.9592
-
--- epoch 10    loss     (train, test): 0.0989,  0.0991
+-- epoch 10
+    loss     (train, test): 0.0989,  0.0991
     accuracy (train, test): 0.9594,  0.9596
-
--- epoch 11    loss     (train, test): 0.0983,  0.0984
+-- epoch 11
+    loss     (train, test): 0.0983,  0.0984
     accuracy (train, test): 0.9597,  0.9599
-
--- epoch 12    loss     (train, test): 0.0977,  0.0980
+-- epoch 12
+    loss     (train, test): 0.0977,  0.0980
     accuracy (train, test): 0.9600,  0.9601
-
--- epoch 13    loss     (train, test): 0.0972,  0.0976
+-- epoch 13
+    loss     (train, test): 0.0972,  0.0976
     accuracy (train, test): 0.9603,  0.9603
-
--- epoch 14    loss     (train, test): 0.0968,  0.0973
+-- epoch 14
+    loss     (train, test): 0.0968,  0.0973
     accuracy (train, test): 0.9605,  0.9603
-
--- epoch 15    loss     (train, test): 0.0964,  0.0968
+-- epoch 15
+    loss     (train, test): 0.0964,  0.0968
     accuracy (train, test): 0.9606,  0.9607
-
--- epoch 16    loss     (train, test): 0.0961,  0.0964
+-- epoch 16
+    loss     (train, test): 0.0961,  0.0964
     accuracy (train, test): 0.9608,  0.9608
-
--- epoch 17    loss     (train, test): 0.0958,  0.0961
+-- epoch 17
+    loss     (train, test): 0.0958,  0.0961
     accuracy (train, test): 0.9609,  0.9610
-
--- epoch 18    loss     (train, test): 0.0956,  0.0961
+-- epoch 18
+    loss     (train, test): 0.0956,  0.0961
     accuracy (train, test): 0.9611,  0.9609
-
--- epoch 19    loss     (train, test): 0.0954,  0.0959
+-- epoch 19
+    loss     (train, test): 0.0954,  0.0959
     accuracy (train, test): 0.9612,  0.9612
-
--- epoch 20    loss     (train, test): 0.0952,  0.0956
+-- epoch 20
+    loss     (train, test): 0.0952,  0.0956
     accuracy (train, test): 0.9613,  0.9613
-
--- epoch 21    loss     (train, test): 0.0950,  0.0955
+-- epoch 21
+    loss     (train, test): 0.0950,  0.0955
     accuracy (train, test): 0.9614,  0.9613
-
--- epoch 22    loss     (train, test): 0.0948,  0.0955
+-- epoch 22
+    loss     (train, test): 0.0948,  0.0955
     accuracy (train, test): 0.9615,  0.9612
-
--- epoch 23    loss     (train, test): 0.0946,  0.0953
+-- epoch 23
+    loss     (train, test): 0.0946,  0.0953
     accuracy (train, test): 0.9616,  0.9616
-
--- epoch 24    loss     (train, test): 0.0944,  0.0951
+-- epoch 24
+    loss     (train, test): 0.0944,  0.0951
     accuracy (train, test): 0.9617,  0.9614
-
--- epoch 25    loss     (train, test): 0.0943,  0.0947
+-- epoch 25
+    loss     (train, test): 0.0943,  0.0947
     accuracy (train, test): 0.9617,  0.9618
-
--- epoch 26    loss     (train, test): 0.0941,  0.0945
+-- epoch 26
+    loss     (train, test): 0.0941,  0.0945
     accuracy (train, test): 0.9618,  0.9619
-
--- epoch 27    loss     (train, test): 0.0940,  0.0945
+-- epoch 27
+    loss     (train, test): 0.0940,  0.0945
     accuracy (train, test): 0.9619,  0.9618
-
--- epoch 28    loss     (train, test): 0.0939,  0.0943
+-- epoch 28
+    loss     (train, test): 0.0939,  0.0943
     accuracy (train, test): 0.9620,  0.9620
-
--- epoch 29    loss     (train, test): 0.0938,  0.0943
+-- epoch 29
+    loss     (train, test): 0.0938,  0.0943
     accuracy (train, test): 0.9620,  0.9620
-
--- epoch 30    loss     (train, test): 0.0937,  0.0945
+-- epoch 30
+    loss     (train, test): 0.0937,  0.0945
     accuracy (train, test): 0.9620,  0.9617
-
--- epoch 31    loss     (train, test): 0.0936,  0.0942
+-- epoch 31
+    loss     (train, test): 0.0936,  0.0942
     accuracy (train, test): 0.9621,  0.9621
-
--- epoch 32    loss     (train, test): 0.0936,  0.0939
+-- epoch 32
+    loss     (train, test): 0.0936,  0.0939
     accuracy (train, test): 0.9622,  0.9622
-
--- epoch 33    loss     (train, test): 0.0935,  0.0940
+-- epoch 33
+    loss     (train, test): 0.0935,  0.0940
     accuracy (train, test): 0.9622,  0.9622
-
--- epoch 34    loss     (train, test): 0.0934,  0.0942
+-- epoch 34
+    loss     (train, test): 0.0934,  0.0942
     accuracy (train, test): 0.9622,  0.9622
-
--- epoch 35    loss     (train, test): 0.0934,  0.0939
+-- epoch 35
+    loss     (train, test): 0.0934,  0.0939
     accuracy (train, test): 0.9622,  0.9622
-
--- epoch 36    loss     (train, test): 0.0933,  0.0938
+-- epoch 36
+    loss     (train, test): 0.0933,  0.0938
     accuracy (train, test): 0.9623,  0.9623
-
--- epoch 37    loss     (train, test): 0.0933,  0.0938
+-- epoch 37
+    loss     (train, test): 0.0933,  0.0938
     accuracy (train, test): 0.9623,  0.9621
-
--- epoch 38    loss     (train, test): 0.0932,  0.0936
+-- epoch 38
+    loss     (train, test): 0.0932,  0.0936
     accuracy (train, test): 0.9623,  0.9624
-
--- epoch 39    loss     (train, test): 0.0932,  0.0937
+-- epoch 39
+    loss     (train, test): 0.0932,  0.0937
     accuracy (train, test): 0.9624,  0.9624
-
--- epoch 40    loss     (train, test): 0.0931,  0.0935
+-- epoch 40
+    loss     (train, test): 0.0931,  0.0935
     accuracy (train, test): 0.9624,  0.9624
-
--- epoch 41    loss     (train, test): 0.0931,  0.0935
+-- epoch 41
+    loss     (train, test): 0.0931,  0.0935
     accuracy (train, test): 0.9624,  0.9625
-
--- epoch 42    loss     (train, test): 0.0931,  0.0938
+-- epoch 42
+    loss     (train, test): 0.0931,  0.0938
     accuracy (train, test): 0.9624,  0.9621
-
--- epoch 43    loss     (train, test): 0.0930,  0.0934
+-- epoch 43
+    loss     (train, test): 0.0930,  0.0934
     accuracy (train, test): 0.9625,  0.9626
-
--- epoch 44    loss     (train, test): 0.0930,  0.0934
+-- epoch 44
+    loss     (train, test): 0.0930,  0.0934
     accuracy (train, test): 0.9624,  0.9625
-
--- epoch 45    loss     (train, test): 0.0930,  0.0936
+-- epoch 45
+    loss     (train, test): 0.0930,  0.0936
     accuracy (train, test): 0.9624,  0.9625
-
--- epoch 46    loss     (train, test): 0.0929,  0.0935
+-- epoch 46
+    loss     (train, test): 0.0929,  0.0935
     accuracy (train, test): 0.9625,  0.9624
-
--- epoch 47    loss     (train, test): 0.0929,  0.0937
+-- epoch 47
+    loss     (train, test): 0.0929,  0.0937
     accuracy (train, test): 0.9625,  0.9625
-
--- epoch 48    loss     (train, test): 0.0929,  0.0934
+-- epoch 48
+    loss     (train, test): 0.0929,  0.0934
     accuracy (train, test): 0.9625,  0.9625
-
--- epoch 49    loss     (train, test): 0.0929,  0.0933
+-- epoch 49
+    loss     (train, test): 0.0929,  0.0933
     accuracy (train, test): 0.9625,  0.9624
-
--- epoch 50    loss     (train, test): 0.0928,  0.0935
+-- epoch 50
+    loss     (train, test): 0.0928,  0.0935
     accuracy (train, test): 0.9625,  0.9626
-
--- epoch 51    loss     (train, test): 0.0928,  0.0942
+-- epoch 51
+    loss     (train, test): 0.0928,  0.0942
     accuracy (train, test): 0.9625,  0.9618
-
--- epoch 52    loss     (train, test): 0.0928,  0.0932
+-- epoch 52
+    loss     (train, test): 0.0928,  0.0932
     accuracy (train, test): 0.9626,  0.9626
-
--- epoch 53    loss     (train, test): 0.0927,  0.0934
+-- epoch 53
+    loss     (train, test): 0.0927,  0.0934
     accuracy (train, test): 0.9626,  0.9625
-
--- epoch 54    loss     (train, test): 0.0927,  0.0932
+-- epoch 54
+    loss     (train, test): 0.0927,  0.0932
     accuracy (train, test): 0.9626,  0.9626
-
--- epoch 55    loss     (train, test): 0.0927,  0.0932
+-- epoch 55
+    loss     (train, test): 0.0927,  0.0932
     accuracy (train, test): 0.9626,  0.9625
-
--- epoch 56    loss     (train, test): 0.0926,  0.0932
+-- epoch 56
+    loss     (train, test): 0.0926,  0.0932
     accuracy (train, test): 0.9626,  0.9625
-
--- epoch 57    loss     (train, test): 0.0926,  0.0931
+-- epoch 57
+    loss     (train, test): 0.0926,  0.0931
     accuracy (train, test): 0.9626,  0.9625
-
--- epoch 58    loss     (train, test): 0.0926,  0.0930
+-- epoch 58
+    loss     (train, test): 0.0926,  0.0930
     accuracy (train, test): 0.9626,  0.9626
-
--- epoch 59    loss     (train, test): 0.0925,  0.0930
+-- epoch 59
+    loss     (train, test): 0.0925,  0.0930
     accuracy (train, test): 0.9627,  0.9627
-
--- epoch 60    loss     (train, test): 0.0925,  0.0930
+-- epoch 60
+    loss     (train, test): 0.0925,  0.0930
     accuracy (train, test): 0.9627,  0.9627
-
--- epoch 61    loss     (train, test): 0.0925,  0.0931
+-- epoch 61
+    loss     (train, test): 0.0925,  0.0931
     accuracy (train, test): 0.9627,  0.9624
-
--- epoch 62    loss     (train, test): 0.0924,  0.0928
+-- epoch 62
+    loss     (train, test): 0.0924,  0.0928
     accuracy (train, test): 0.9627,  0.9627
-
--- epoch 63    loss     (train, test): 0.0924,  0.0928
+-- epoch 63
+    loss     (train, test): 0.0924,  0.0928
     accuracy (train, test): 0.9627,  0.9627
-
--- epoch 64    loss     (train, test): 0.0924,  0.0929
+-- epoch 64
+    loss     (train, test): 0.0924,  0.0929
     accuracy (train, test): 0.9627,  0.9626
-
--- epoch 65    loss     (train, test): 0.0923,  0.0927
+-- epoch 65
+    loss     (train, test): 0.0923,  0.0927
     accuracy (train, test): 0.9627,  0.9627
-
--- epoch 66    loss     (train, test): 0.0923,  0.0928
+-- epoch 66
+    loss     (train, test): 0.0923,  0.0928
     accuracy (train, test): 0.9628,  0.9626
-
--- epoch 67    loss     (train, test): 0.0923,  0.0927
+-- epoch 67
+    loss     (train, test): 0.0923,  0.0927
     accuracy (train, test): 0.9628,  0.9629
-
--- epoch 68    loss     (train, test): 0.0922,  0.0930
+-- epoch 68
+    loss     (train, test): 0.0922,  0.0930
     accuracy (train, test): 0.9628,  0.9628
-
--- epoch 69    loss     (train, test): 0.0922,  0.0925
+-- epoch 69
+    loss     (train, test): 0.0922,  0.0925
     accuracy (train, test): 0.9628,  0.9629
-
--- epoch 70    loss     (train, test): 0.0922,  0.0928
+-- epoch 70
+    loss     (train, test): 0.0922,  0.0928
     accuracy (train, test): 0.9628,  0.9629
-
--- epoch 71    loss     (train, test): 0.0922,  0.0925
+-- epoch 71
+    loss     (train, test): 0.0922,  0.0925
     accuracy (train, test): 0.9628,  0.9628
-
--- epoch 72    loss     (train, test): 0.0921,  0.0924
+-- epoch 72
+    loss     (train, test): 0.0921,  0.0924
     accuracy (train, test): 0.9628,  0.9629
-
--- epoch 73    loss     (train, test): 0.0921,  0.0924
+-- epoch 73
+    loss     (train, test): 0.0921,  0.0924
     accuracy (train, test): 0.9629,  0.9629
-
--- epoch 74    loss     (train, test): 0.0920,  0.0925
+-- epoch 74
+    loss     (train, test): 0.0920,  0.0925
     accuracy (train, test): 0.9629,  0.9627
-
--- epoch 75    loss     (train, test): 0.0920,  0.0924
+-- epoch 75
+    loss     (train, test): 0.0920,  0.0924
     accuracy (train, test): 0.9629,  0.9629
-
--- epoch 76    loss     (train, test): 0.0920,  0.0926
+-- epoch 76
+    loss     (train, test): 0.0920,  0.0926
     accuracy (train, test): 0.9629,  0.9630
-
--- epoch 77    loss     (train, test): 0.0920,  0.0925
+-- epoch 77
+    loss     (train, test): 0.0920,  0.0925
     accuracy (train, test): 0.9629,  0.9627
-
--- epoch 78    loss     (train, test): 0.0919,  0.0924
+-- epoch 78
+    loss     (train, test): 0.0919,  0.0924
     accuracy (train, test): 0.9629,  0.9629
-
--- epoch 79    loss     (train, test): 0.0919,  0.0923
+-- epoch 79
+    loss     (train, test): 0.0919,  0.0923
     accuracy (train, test): 0.9629,  0.9628
-
--- epoch 80    loss     (train, test): 0.0919,  0.0924
+-- epoch 80
+    loss     (train, test): 0.0919,  0.0924
     accuracy (train, test): 0.9629,  0.9630
-
--- epoch 81    loss     (train, test): 0.0919,  0.0922
+-- epoch 81
+    loss     (train, test): 0.0919,  0.0922
     accuracy (train, test): 0.9630,  0.9628
-
--- epoch 82    loss     (train, test): 0.0918,  0.0921
+-- epoch 82
+    loss     (train, test): 0.0918,  0.0921
     accuracy (train, test): 0.9630,  0.9629
-
--- epoch 83    loss     (train, test): 0.0918,  0.0923
+-- epoch 83
+    loss     (train, test): 0.0918,  0.0923
     accuracy (train, test): 0.9630,  0.9631
-
--- epoch 84    loss     (train, test): 0.0918,  0.0922
+-- epoch 84
+    loss     (train, test): 0.0918,  0.0922
     accuracy (train, test): 0.9630,  0.9630
-
--- epoch 85    loss     (train, test): 0.0918,  0.0923
+-- epoch 85
+    loss     (train, test): 0.0918,  0.0923
     accuracy (train, test): 0.9630,  0.9628
-
--- epoch 86    loss     (train, test): 0.0917,  0.0926
+-- epoch 86
+    loss     (train, test): 0.0917,  0.0926
     accuracy (train, test): 0.9630,  0.9630
-
--- epoch 87    loss     (train, test): 0.0917,  0.0921
+-- epoch 87
+    loss     (train, test): 0.0917,  0.0921
     accuracy (train, test): 0.9630,  0.9630
-
--- epoch 88    loss     (train, test): 0.0917,  0.0921
+-- epoch 88
+    loss     (train, test): 0.0917,  0.0921
     accuracy (train, test): 0.9630,  0.9630
-
--- epoch 89    loss     (train, test): 0.0917,  0.0921
+-- epoch 89
+    loss     (train, test): 0.0917,  0.0921
     accuracy (train, test): 0.9630,  0.9630
-
--- epoch 90    loss     (train, test): 0.0916,  0.0920
+-- epoch 90
+    loss     (train, test): 0.0916,  0.0920
     accuracy (train, test): 0.9631,  0.9630
-
--- epoch 91    loss     (train, test): 0.0916,  0.0921
+-- epoch 91
+    loss     (train, test): 0.0916,  0.0921
     accuracy (train, test): 0.9631,  0.9631
-
--- epoch 92    loss     (train, test): 0.0916,  0.0920
+-- epoch 92
+    loss     (train, test): 0.0916,  0.0920
     accuracy (train, test): 0.9630,  0.9629
-
--- epoch 93    loss     (train, test): 0.0916,  0.0920
+-- epoch 93
+    loss     (train, test): 0.0916,  0.0920
     accuracy (train, test): 0.9631,  0.9630
-
--- epoch 94    loss     (train, test): 0.0915,  0.0927
+-- epoch 94
+    loss     (train, test): 0.0915,  0.0927
     accuracy (train, test): 0.9631,  0.9629
-
--- epoch 95    loss     (train, test): 0.0915,  0.0920
+-- epoch 95
+    loss     (train, test): 0.0915,  0.0920
     accuracy (train, test): 0.9631,  0.9631
-
--- epoch 96    loss     (train, test): 0.0915,  0.0922
+-- epoch 96
+    loss     (train, test): 0.0915,  0.0922
     accuracy (train, test): 0.9631,  0.9627
-
--- epoch 97    loss     (train, test): 0.0915,  0.0919
+-- epoch 97
+    loss     (train, test): 0.0915,  0.0919
     accuracy (train, test): 0.9631,  0.9630
-
--- epoch 98    loss     (train, test): 0.0914,  0.0918
+-- epoch 98
+    loss     (train, test): 0.0914,  0.0918
     accuracy (train, test): 0.9631,  0.9630
-
--- epoch 99    loss     (train, test): 0.0914,  0.0920
+-- epoch 99
+    loss     (train, test): 0.0914,  0.0920
     accuracy (train, test): 0.9632,  0.9632
