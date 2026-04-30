@@ -59,7 +59,7 @@ myModel = get_model(cfg['model'])
 myLoss = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(myModel.parameters(), lr=cfg['learning_rate'])
 
-print(f"Number of paramerters of Linear model: {sum(p.numel() for p in myModel.parameters() if p.requires_grad)}")
+print(f"Number of paramerters of attention model: {sum(p.numel() for p in myModel.parameters() if p.requires_grad)}")
 
 
 N_train = len(train_loader.dataset) 

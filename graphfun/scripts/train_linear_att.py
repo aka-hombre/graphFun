@@ -42,7 +42,7 @@ p_path = "data/metadata/graphs_manifest.parquet"
 d_path = "data/graph_data/V10/"
 
 data = DataManager(parquet_path=p_path, data_dir=d_path).to_full_dataframe()
-G, labels = get_graphs(data, return_adj_flat=True)
+G, labels = get_graphs(data, return_adj_matrix=True)
 
 #-----  Spliting train and test
 G_train, G_test, y_train, y_test = train_test_split(G, 
@@ -81,7 +81,7 @@ myLoss = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(myModel.parameters(), lr=cfg['learning_rate'])
 
 
-print(f"Number of paramerters of MLP model: {sum(p.numel() for p in myModel.parameters() if p.requires_grad)}")
+print(f"Number of paramerters of attention model: {sum(p.numel() for p in myModel.parameters() if p.requires_grad)}")
 
 
 N_train = len(train_loader.dataset) 
