@@ -25,7 +25,7 @@ class myMLP(nn.Module):
     """
     MLP with one hidden layer, and ReLu activation 
     """
-    def __init__(self, in_dimension=100, intermediate=60, classes= 2):
+    def __init__(self, in_dimension=100, intermediate=50, classes= 2):
         super().__init__()
         self.model = nn.Sequential(
             nn.Flatten(),
