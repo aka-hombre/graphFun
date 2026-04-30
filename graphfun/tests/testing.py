@@ -10,12 +10,14 @@ import matplotlib.pyplot as plt
 #   Local modules
 from graphfun.data.data_manager import DataManager, GraphDataSet
 from graphfun.data.graph_grappler import get_graphs
+from graphfun.models import get_model
 
 
 cfg = dict()
 cfg['numEpoch'] = 10
 cfg['learning_rate'] = .0001
 cfg['batchSize'] = 32
+cfg['model'] = 'linear_w_att'
 
 p_path = "data/metadata/graphs_manifest.parquet"
 d_path = "data/graph_data/V10/"
@@ -27,7 +29,7 @@ print(f"Using device: {device}")
 
 shard1 = DataManager(p_path, d_path).pull_shard(000)
 print(shard1.head())
-G, labels = get_graphs(shard1, return_adj_flat=True)
+G, labels = get_graphs(shard1, return_adj_matrix=True)
 
 print(G.dtype)
 
@@ -51,10 +53,7 @@ test_loader = DataLoader(
     shuffle=False  
 )
 
-myModel = nn.Sequential(
-    nn.Flatten(),
-    nn.Linear(100, 2)
-)
+myModel = get_model(cfg['model'])
 
 
 myLoss = torch.nn.CrossEntropyLoss()
