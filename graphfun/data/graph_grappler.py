@@ -5,7 +5,7 @@ from numpy.typing import NDArray
 import numpy as np
 
 def get_graphs(df: pd.DataFrame, 
-               return_adj: bool=False
+               return_adj_flat: bool=False
                )-> Tuple[Union[List[nx.Graph], NDArray], NDArray]:
     """
     Takes a DataFrame processed by data_manager, and extracts the graph6
@@ -13,7 +13,7 @@ def get_graphs(df: pd.DataFrame,
     
     Args:
         df: pandas DataFrame processed by data_manager
-        return_adj: option to return as a networkx Graph object or numpy adjacency matrix (FLATTENED)
+        return_adj_flat: option to return as a networkx Graph object or numpy adjacency matrix (FLATTENED)
     Returns:
         Tuple[Union[List[nx.Graph], NDArray], NDArray]:
             graphs:
@@ -29,7 +29,7 @@ def get_graphs(df: pd.DataFrame,
     #G = [nx.from_graph6_bytes(g.strip().encode()) for g in graphs]
     
 
-    if return_adj: 
+    if return_adj_flat: 
         features = np.stack([
             nx.to_numpy_array(
                 nx.from_graph6_bytes(g.encode())
