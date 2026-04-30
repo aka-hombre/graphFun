@@ -168,15 +168,15 @@ plt.ylabel("Average Loss")
 plt.legend()
 plt.grid(True, which='both', axis='y')   
 plt.grid(True, which='major', axis='x')
-plt.savefig('graphfun/outputs/linear_att_output/loss.png', dpi=300)
+plt.savefig('graphfun/outputs/linear_att_bad_output/loss.png', dpi=300)
 
 #-----
 #   Writing data to .csv and making log
 #-----
 
-df.to_csv('graphfun/outputs/linear_att_output/stats.csv')
+df.to_csv('graphfun/outputs/linear_att_bad_output/stats.csv')
 
-with open('graphfun/outputs/linear_att_output/log.txt', 'w', encoding='utf-8') as f:
+with open('graphfun/outputs/linear_att_bad_output/log.txt', 'w', encoding='utf-8') as f:
     f.write(log_str)
 
 
@@ -199,7 +199,7 @@ with torch.no_grad():
         all_preds.extend(preds.cpu().numpy())
         all_targets.extend(y.cpu().numpy())
 
-np.savez('graphfun/outputs/linear_att_output/preds_targets.npz',
+np.savez('graphfun/outputs/linear_att_bad_output/preds_targets.npz',
          preds=all_preds,
          targets=all_targets)
 
@@ -222,5 +222,5 @@ disp.plot(ax= ax, cmap='Blues', values_format='.2f')
 plt.tight_layout()
 plt.title("Confusion Matrix")
 
-fig.savefig('graphfun/outputs/linear_att_output/cm.png')
+fig.savefig('graphfun/outputs/linear_att_bad_output/cm.png')
 
