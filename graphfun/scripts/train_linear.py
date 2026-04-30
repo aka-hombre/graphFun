@@ -212,7 +212,7 @@ all_targets = data['targets']
 
 label_gr = ['Not Planar','Planar']
 
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(10, 8))
 
 cm = confusion_matrix(all_targets,all_preds, normalize='true')
 
