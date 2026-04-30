@@ -38,17 +38,27 @@ class myMLP(nn.Module):
     
 class myLinearWithAtt(nn.Module):
     """
-    0_0     
+    Uses attention as a learned weighted average over rows.
+    self.attention_score is taking is treating the adjeacency matrix as a set of 10 vectors in \(\R^{10}\)
+    in `def forward(self, x)`
+        - each vector gets assigned a scalar, so we get a vector in \(\R^{10}\)
+        - softmax normalizes across the 10 scores, turning them into a probability distribution
+        - with `context = (weights * x).sum(dim=1)` each vector gets scaled by its scalar weight
+            - then we sum collapsing the the set of ten vector into 1 vector in \(\R^{10}\)
+        - The last linear layer produces a vector in \(\R^{2}\)
     """
-    def __init__(self, in_dimension=10, classes= 2):
+    def __init__(self, in_dimension=10, classes=2):
         super().__init__()
-        self.model = nn.Linear(in_dimension, classes)
+        # Learns a score for each row
+        self.attention_score = nn.Linear(in_dimension, 1)
+        self.classifier = nn.Linear(in_dimension, classes)
 
-        def forward(self, x):
-            return self.model(self.to_vec(x))
-
-    def to_vec(X):
-        return torch.split(X, 10, dim=0)    #   dim=0 corresponds to splitting by rows
+    def forward(self, x):
+        # x: (batch, 10, 10)
+        scores = self.attention_score(x)          # (batch, 10, 1)
+        weights = torch.softmax(scores, dim=1)    # (batch, 10, 1) — sums to 1 over rows
+        context = (weights * x).sum(dim=1)        # (batch, 10) — weighted sum of rows
+        return self.classifier(context)           # (batch, 2)
 
     
 
