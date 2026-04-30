@@ -5,7 +5,8 @@ from numpy.typing import NDArray
 import numpy as np
 
 def get_graphs(df: pd.DataFrame, 
-               return_adj_flat: bool=False
+               return_adj_flat: bool=False,
+               return_adj_matrix: bool=False
                )-> Tuple[Union[List[nx.Graph], NDArray], NDArray]:
     """
     Takes a DataFrame processed by data_manager, and extracts the graph6
@@ -13,12 +14,13 @@ def get_graphs(df: pd.DataFrame,
     
     Args:
         df: pandas DataFrame processed by data_manager
-        return_adj_flat: option to return as a networkx Graph object or numpy adjacency matrix (FLATTENED)
+        return_adj_flat: return flattened adjacency matrices as (N, 100) — for MLP/Linear
+        return_adj_matrix: return unflattened adjacency matrices as (N, 10, 10) — for Attention
+        (neither): return List of networkx.Graph objects
     Returns:
         Tuple[Union[List[nx.Graph], NDArray], NDArray]:
             graphs:
-                List of networkx.Graph objects or NumPy array of adjacency matrices, as (1x100) vec,
-                depending on `return_adj`
+                List of networkx.Graph objects, (N, 100) flat array, or (N, 10, 10) array
             labels:
                 NumPy array of boolean planarity labels
     """
@@ -37,6 +39,14 @@ def get_graphs(df: pd.DataFrame,
             for g in graphs                     # iterate strings, not Graph objects, flattens for input to linear as is, avoide bottlenecking when loading in the whole dataset
         ])
         return features, labels
+    elif return_adj_matrix:
+        features = np.stack([
+            nx.to_numpy_array(
+                nx.from_graph6_bytes(g.encode())
+            ).astype(np.float32)
+            for g in graphs
+        ]
+        )
     else: 
         G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
         return G, labels
