@@ -23,7 +23,7 @@ cfg = dict()
 cfg['numEpoch'] = 100
 cfg['learning_rate'] = .0001
 cfg['batchSize'] = 1024
-cfg['model'] = 'linear_w_att'
+cfg['model'] = 'linear_w_att_bad'
 
 #-----
 #   Device specific training
