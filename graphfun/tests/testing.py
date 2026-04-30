@@ -27,7 +27,7 @@ print(f"Using device: {device}")
 
 shard1 = DataManager(p_path, d_path).pull_shard(000)
 print(shard1.head())
-G, labels = get_graphs(shard1, return_adj=True)
+G, labels = get_graphs(shard1, return_adj_flat=True)
 
 print(G.dtype)
 
