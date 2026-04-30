@@ -218,8 +218,6 @@ cm = confusion_matrix(all_targets,all_preds, normalize='true')
 
 disp = ConfusionMatrixDisplay(cm, display_labels=label_gr)
 disp.plot(ax= ax, cmap='Blues', values_format='.2f')
-fig.subplots_adjust(bottom=0.85) 
-fig.subplots_adjust(top=0.85)
 
 plt.tight_layout()
 plt.title("Confusion Matrix")
