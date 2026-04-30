@@ -36,6 +36,23 @@ class myMLP(nn.Module):
     def forward(self, x):
         return self.model(x)
     
+class myMLP2(nn.Module):
+    """
+    MLP with two hidden layer, and ReLu activation 
+    """
+    def __init__(self, in_dimension=100, intermediate1=50, intermediate2=25, classes= 2):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(in_dimension, intermediate1),
+            nn.ReLU(),
+            nn.Linear(intermediate1, intermediate2),
+            nn.ReLU(),
+            nn.Linear(intermediate2, classes)
+        )
+    def forward(self, x):
+        return self.model(x)
+    
 class myLinearWithAttBad(nn.Module):
     """
     Uses attention as a learned weighted average over rows.
@@ -61,6 +78,7 @@ class myLinearWithAttBad(nn.Module):
         context = (weights * x).sum(dim=1)        # (batch, 10) — weighted sum of rows
         return self.classifier(context)           # (batch, 2)
 
+
     
 
 
@@ -71,6 +89,7 @@ class myLinearWithAttBad(nn.Module):
 MODEL_REGISTRY = {
     "linear": myLinearModel,
     "MLP": myMLP,
+    "MLP2": myMLP2,
     "linear_w_att": myLinearWithAttBad
 }
 
