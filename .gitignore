@@ -241,6 +241,7 @@ __pycache__/
 
 # My stuff 
 NOTES.md
+slurm.*
 
 # removed from unit testing
 graphfun/tests/*.png
