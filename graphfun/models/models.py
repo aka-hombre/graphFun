@@ -36,11 +36,12 @@ class myMLP(nn.Module):
     def forward(self, x):
         return self.model(x)
     
-class myLinearWithAtt(nn.Module):
+class myLinearWithAttBad(nn.Module):
     """
     Uses attention as a learned weighted average over rows.
     self.attention_score is taking is treating the adjeacency matrix as a set of 10 vectors in \(\R^{10}\)
     in `def forward(self, x)`
+    **Not attention**
         - each vector gets assigned a scalar, so we get a vector in \(\R^{10}\)
         - softmax normalizes across the 10 scores, turning them into a probability distribution
         - with `context = (weights * x).sum(dim=1)` each vector gets scaled by its scalar weight
@@ -70,7 +71,7 @@ class myLinearWithAtt(nn.Module):
 MODEL_REGISTRY = {
     "linear": myLinearModel,
     "MLP": myMLP,
-    "linear_w_att": myLinearWithAtt
+    "linear_w_att": myLinearWithAttBad
 }
 
 def get_model(name: str, **kwargs) -> nn.Module:
