@@ -47,6 +47,7 @@ def get_graphs(df: pd.DataFrame,
             for g in graphs
         ]
         )
+        return features, labels
     else: 
         G = [nx.from_graph6_bytes(g.encode()) for g in graphs]
         return G, labels
