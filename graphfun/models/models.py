@@ -53,6 +53,15 @@ class myMLP2(nn.Module):
     def forward(self, x):
         return self.model(x)
     
+class myAttention(nn.Module):
+    """
+    Actual Attention this time
+    """
+    def __init__(self, in_dimension=10):
+        super().__init__()
+
+        self.key 
+
 class myLinearWithAttBad(nn.Module):
     """
     Uses attention as a learned weighted average over rows.
