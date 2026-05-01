@@ -13,7 +13,7 @@ Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` u
 ./geng -q 10 | split -l 107189 -d -a 3 --additional-suffix=.g6 - batches/graphs10_
 ```
 
-Each file has 107189, and there are 111 files totaling 1320675669 non-isomorphic graphs.
+Each file has 107189, and there are 112 files totaling 12005168 non-isomorphic graphs.
 
 ___
 
