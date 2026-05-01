@@ -1,0 +1,7 @@
+Total number of graphs: 12005168
+ ***********
+ Proportion of planar: 0.09503540475235332 
+ Number of planar: 1140916 
+ ***********
+ Proportion not planar: 0.9049645952476467
+ Number of not planar: 10864252
