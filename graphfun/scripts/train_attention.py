@@ -45,7 +45,7 @@ output_dir = "graphfun/outputs/attention_output/"
 os.makedirs(output_dir, exist_ok=True)
 
 data = DataManager(parquet_path=p_path, data_dir=d_path).to_full_dataframe()
-G, labels = get_graphs(data, return_adj_flat=True)
+G, labels = get_graphs(data, return_adj_matrix=True)
 
 #-----  Spliting train and test
 G_train, G_test, y_train, y_test = train_test_split(G, 
