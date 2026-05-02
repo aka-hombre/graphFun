@@ -100,7 +100,7 @@ class myAttention(nn.Module):
         weights = torch.softmax(scores, dim=-1)                         # [B, 2, 10]
         Z       = weights @ V                                           # [B, 2, 10]
         out     = self.Wo(Z)                                            # [B, 2, 2]
-        return out[0]                                                   # [B, 2]  
+        return out[:, 0, :]                                             # [B, 2]  
 
 
 class myLinearWithAttBad(nn.Module):
