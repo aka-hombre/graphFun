@@ -92,15 +92,15 @@ class myAttention(nn.Module):
     def forward(self, X):
         # X: [10, 10]
         Q = self.queries                        # [2,  10]  
-        K = self.Wk(X)                          # [10, 10]
-        V = self.Wv(X)                          # [10, 10]
+        K = self.Wk(X)                          # [B, 10, 10]
+        V = self.Wv(X)                          # [B, 10, 10]
 
-        scores  = (Q @ K.T) / self.scale        # [2,  10]
-        weights = torch.softmax(scores, dim=-1) # [2,  10]
-        Z       = weights @ V                   # [2,  10]
 
-        out = self.Wo(Z)                        # [2,   2]
-        return out[0]                           # [2]  
+        scores  = (Q.unsqueeze(0) @ K.transpose(-2, -1)) / self.scale   # [B, 2, 10]
+        weights = torch.softmax(scores, dim=-1)                         # [B, 2, 10]
+        Z       = weights @ V                                           # [B, 2, 10]
+        out     = self.Wo(Z)                                            # [B, 2, 2]
+        return out[0]                                                   # [B, 2]  
 
 
 class myLinearWithAttBad(nn.Module):
