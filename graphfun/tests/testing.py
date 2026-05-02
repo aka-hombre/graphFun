@@ -17,7 +17,7 @@ cfg = dict()
 cfg['numEpoch'] = 10
 cfg['learning_rate'] = .0001
 cfg['batchSize'] = 32
-cfg['model'] = 'linear_w_att'
+cfg['model'] = 'attention'
 
 p_path = "data/metadata/graphs_manifest.parquet"
 d_path = "data/graph_data/V10/"
