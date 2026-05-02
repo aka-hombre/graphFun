@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+
 #-----
 #   Models
 #-----
@@ -74,12 +75,33 @@ class myMLP3(nn.Module):
     
 class myAttention(nn.Module):
     """
-    Actual Attention this time
+    Finally attention.
     """
-    def __init__(self, in_dimension=10):
+    def __init__(self):
         super().__init__()
+        d_model = 10
 
-        self.key 
+        # Q_v matrix is a paremter
+        self.queries = nn.Parameter(torch.randn(2, d_model))  # [2, 10]
+
+        self.Wk = nn.Linear(d_model, d_model, bias=False)
+        self.Wv = nn.Linear(d_model, d_model, bias=False)
+        self.Wo = nn.Linear(d_model, 2,       bias=False)
+        self.scale = d_model ** 0.5
+
+    def forward(self, X):
+        # X: [10, 10]
+        Q = self.queries                        # [2,  10]  
+        K = self.Wk(X)                          # [10, 10]
+        V = self.Wv(X)                          # [10, 10]
+
+        scores  = (Q @ K.T) / self.scale        # [2,  10]
+        weights = torch.softmax(scores, dim=-1) # [2,  10]
+        Z       = weights @ V                   # [2,  10]
+
+        out = self.Wo(Z)                        # [2,   2]
+        return out[0]                           # [2]  
+
 
 class myLinearWithAttBad(nn.Module):
     """
@@ -119,6 +141,7 @@ MODEL_REGISTRY = {
     "MLP": myMLP,
     "MLP2": myMLP2,
     "MLP3": myMLP3,
+    "attention": myAttention,
     "linear_w_att_bad": myLinearWithAttBad
 }
 
