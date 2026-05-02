@@ -35,7 +35,7 @@ class myMLP(nn.Module):
         )
     def forward(self, x):
         return self.model(x)
-    
+
 class myMLP2(nn.Module):
     """
     MLP with two hidden layer, and ReLu activation 
@@ -49,6 +49,25 @@ class myMLP2(nn.Module):
             nn.Linear(intermediate1, intermediate2),
             nn.ReLU(),
             nn.Linear(intermediate2, classes)
+        )
+    def forward(self, x):
+        return self.model(x)
+
+class myMLP3(nn.Module):
+    """
+    MLP with three hidden layers, and ReLu activation 
+    """
+    def __init__(self, in_dimension=100, intermediate1=75, intermediate2=50, intermediate3= 25, classes= 2):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(in_dimension, intermediate1),
+            nn.ReLU(),
+            nn.Linear(intermediate1, intermediate2),
+            nn.ReLU(),
+            nn.Linear(intermediate3, intermediate2),
+            nn.ReLU(),
+            nn.Linear(intermediate3, classes)
         )
     def forward(self, x):
         return self.model(x)
@@ -99,7 +118,8 @@ MODEL_REGISTRY = {
     "linear": myLinearModel,
     "MLP": myMLP,
     "MLP2": myMLP2,
-    "linear_w_att": myLinearWithAttBad
+    "MLP3": myMLP3,
+    "linear_w_att_bad": myLinearWithAttBad
 }
 
 def get_model(name: str, **kwargs) -> nn.Module:
