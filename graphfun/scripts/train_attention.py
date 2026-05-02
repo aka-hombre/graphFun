@@ -77,7 +77,7 @@ test_loader = DataLoader(
 #----- 
 #   Model Making
 #-----
-myModel = get_model(cfg['model'], in_dimension=100, classes=2)
+myModel = get_model(cfg['model'])
 myModel = myModel.to(device)
 
 myLoss = torch.nn.CrossEntropyLoss()

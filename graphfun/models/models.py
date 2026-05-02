@@ -66,7 +66,7 @@ class myMLP3(nn.Module):
             nn.ReLU(),
             nn.Linear(intermediate1, intermediate2),
             nn.ReLU(),
-            nn.Linear(intermediate3, intermediate2),
+            nn.Linear(intermediate2, intermediate3),
             nn.ReLU(),
             nn.Linear(intermediate3, classes)
         )
