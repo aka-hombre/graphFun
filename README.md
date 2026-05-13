@@ -2,8 +2,8 @@
 <img src="./design_assets/complete_10.png"  width="25%" height="25%" alt="logo"></img>
 </div>
 
-# graphFun
-<sub>machine learning & graph playground</sub>
+<h1>graphFun</h1>
+<p><sub>machine learning & graph playground</sub></p>
 
 
 Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` using the tool
