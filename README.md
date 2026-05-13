@@ -1,6 +1,7 @@
 <div align="center">
-<img src="./design_assets/complete_10.png" alt="logo"></img>
+<img src="./design_assets/complete_10.png"  width="50%" height="50%" alt="logo"></img>
 </div>
+
 # *graphFun*
 *machine learning & graph playground*
 ___
