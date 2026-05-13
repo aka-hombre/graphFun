@@ -1,9 +1,9 @@
 <div align="center">
-<img src="./design_assets/complete_10.png"  width="50%" height="50%" alt="logo"></img>
+<img src="./design_assets/complete_10.png"  width="25%" height="25%" alt="logo"></img>
 </div>
 
-# *graphFun*
-*machine learning & graph playground*
+# graphFun: *machine learning & graph playground*
+
 ___
 
 Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` using the tool
