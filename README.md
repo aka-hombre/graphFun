@@ -2,9 +2,9 @@
 <img src="./design_assets/complete_10.png"  width="25%" height="25%" alt="logo"></img>
 </div>
 
-# graphFun: *machine learning & graph playground*
+# graphFun
+<sub>machine learning & graph playground</sub>
 
-___
 
 Non-isomorphic graphs found in `data/graph_data/` were generated using `nauty` using the tool
 `geng`
