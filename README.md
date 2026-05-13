@@ -1,6 +1,6 @@
-![image info](./design_assets/complete_10.png)
-
-
+<div align="center">
+<img src="./design_assets/complete_10.png" alt="logo"></img>
+</div>
 # *graphFun*
 *machine learning & graph playground*
 ___
