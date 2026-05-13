@@ -1,6 +1,7 @@
+# *graphFun*
+
 <h1 style="display: flex; align-items: center; gap: 10px;">
-  <img src="design_assets/complete_10.png" alt="alt text" width="70">
-  <span>graphFun</span>
+  <img src="design_assets/complete_10.png" alt="alt text" width="200">
 </h1>
 
 *machine learning & graph playground*
