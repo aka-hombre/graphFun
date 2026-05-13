@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./design_assets/complete_10.png"  width="25%" height="25%" alt="logo"></img>
+<img src="./design_assets/complete_10.png"  width="25%" height="25%" alt="logo_complete_graph"></img>
 </div>
 
 <h1>graphFun</h1>
@@ -27,7 +27,14 @@ ___
 1. `apptainer build mySif.sif containers/apptainer.def`
 2. `apptainer shell mySif.sif`
 3. Once the container is built, we can build the `.parquet` in the shell by running
-  - `python3 graphfun/data/build_manifest.py`
-  - Alternatively, you can run the job using a `.sbatch` script
+    - `python3 graphfun/data/build_manifest.py`
+    - Alternatively, you can run the job using a `.sbatch` script
 
 In `graphfun/scripts/` there are already several training scripts that train from models present in `graphfun/models/models.py`. The training scripts can be executed from various `.sbatch` scripts in the directory `slurmin_it/`.
+
+**To do:**
+1. Make this more of a package
+2. Develop a way to execute in a more consolidated way
+3. .parquet file was not used to it's fullest potential. getting rid of the  `pandas` requirement would be more computationally efficient
+4. Integrating stats into package.
+5. A module students can install and work with :sunglasses:
