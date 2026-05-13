@@ -17,11 +17,17 @@ Each file has 107189, and there are 112 files totaling 12005168 non-isomorphic g
 
 ___
 
-Running `python graphfun/data/build_manifest.py` generates a `.parquet` file to train on in `data/metatdata` this is saved locally and ignored by `.gitignore`, because it exceeds the filesize limits on github. 
+Running `python3 graphfun/data/build_manifest.py` generates a `.parquet` file to train on in `data/metatdata` this is saved locally and ignored by `.gitignore`, because it exceeds the filesize limits on github. 
 
 It is reccomended to run the script on HPC, then transfer locally.
 
 ___
-To run
+
+**To run:**
 1. `apptainer build mySif.sif containers/apptainer.def`
-2. `apptainer exec mySif.sif python3 graphfun/scripts/train_linear.py`
+2. `apptainer shell mySif.sif`
+3. Once the container is built, we can build the `.parquet` in the shell by running
+  - `python3 graphfun/data/build_manifest.py`
+  - Alternatively, you can run the job using a `.sbatch` script
+
+In `graphfun/scripts/` there are already several training scripts that train from models present in `graphfun/models/models.py`. The training scripts can be executed from various `.sbatch` scripts in the directory `slurmin_it/`.
